@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lunch Checker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body >
+    <div class="container" ng-controller="LunchCheck">
+        <h1>Lunch Checker</h1>
+        <div>
+            <input id="lunch-menu" type="text" placeholder="Enter your lunch here!" class="form-control" ng-model="foodList">
+        </div><br/>
+        <div>
+            <button class="btn btn-primary" ng-click="checkLunch()">Check Lunch</button>
+        </div><br/>
+        <div ng-show="!empty && checked" class="alert alert-success">{{notice}}</div>
+        <div ng-show="empty" class="alert alert-danger">Please enter data first</div>
+    </div>
+</body>
+
+</html>
